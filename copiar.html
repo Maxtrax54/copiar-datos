@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copiar CVU y Alias</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            text-align: center; 
+            padding: 20px;
+        }
+        .contenedor {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            max-width: 90%;
+            margin: 10px auto;
+            word-break: break-word;
+        }
+        .texto {
+            font-size: 14px;
+            text-align: left;
+            flex-grow: 1;
+            padding-right: 10px;
+        }
+        button {
+            cursor: pointer;
+            background-color: #9A5A70; /* Color actualizado */
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        button:hover {
+            background-color: #7F4A5A; /* Color más oscuro al pasar el mouse */
+        }
+
+        /* Ajustes para pantallas pequeñas */
+        @media (max-width: 480px) {
+            .contenedor {
+                flex-direction: column;
+                align-items: flex-start;
+                text-align: left;
+                padding: 8px;
+            }
+            button {
+                margin-top: 5px;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h2>Datos de pago</h2>
+    <p><strong>Nombre:</strong> Guadalupe Bau</p>
+    <p><strong>CUIT/CUIL:</strong> 27-50142942-8</p>
+    <p><strong>Plataforma:</strong> Mercado Pago</p>
+
+    <div class="contenedor">
+        <span class="texto"><strong>CVU:</strong> 0000003100017562806690</span>
+        <button onclick="copiarTexto('0000003100017562806690')">📋 Copiar</button>
+    </div>
+
+    <div class="contenedor">
+        <span class="texto"><strong>Alias:</strong> guadisbau</span>
+        <button onclick="copiarTexto('guadisbau')">📋 Copiar</button>
+    </div>
+
+    <script>
+        function copiarTexto(texto) {
+            navigator.clipboard.writeText(texto).then(() => {
+                alert("Copiado al portapapeles: " + texto);
+            });
+        }
+    </script>
+</body>
+</html>
